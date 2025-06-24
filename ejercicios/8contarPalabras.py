@@ -10,3 +10,23 @@ https://retosdeprogramacion.com/ejercicios/
  *   lo resuelvan automáticamente.
  */
 """
+
+def contarPalabras(frase):
+    listaPalabras = {}
+    palabrasSeparadas = frase.split()
+    
+    for palabra in palabrasSeparadas:
+        estaYa = False
+
+        for clave in listaPalabras:
+            if palabra == clave:
+                listaPalabras[clave] += 1
+                estaYa = True
+                break
+
+        if not estaYa:
+            listaPalabras[palabra] = 1
+
+    print(listaPalabras)
+                            
+contarPalabras("hola que tal estamos todos y mira todos juntos estamos hola")
